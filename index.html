@@ -4,11 +4,34 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Mynah – Your AI Speech Coach</title>
+  <meta name="description" content="Master public speaking with My Mynah, your AI speech coach. Real-time feedback on pace, filler words, and tone. Daily practice, C2 vocabulary, quizzes, and Pro plans. Download free on the App Store."/>
+  <meta name="author" content="My Mynah"/>
+  <meta name="theme-color" content="#10B981"/>
+  <link rel="canonical" href="https://mymynah.com/"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mymynah.com/"/>
+  <meta property="og:title" content="My Mynah – Your AI Speech Coach"/>
+  <meta property="og:description" content="Master public speaking with real-time AI feedback. Pace, filler words, tone. Daily practice, vocabulary, quizzes. Download free on the App Store."/>
+  <meta property="og:image" content="https://mymynah.com/Icon%20background%20removed.png"/>
+  <meta property="og:site_name" content="My Mynah"/>
+  <meta property="og:locale" content="en_US"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="My Mynah – Your AI Speech Coach"/>
+  <meta name="twitter:description" content="Master public speaking with real-time AI feedback. Download free on the App Store."/>
+  <meta name="twitter:image" content="https://mymynah.com/Icon%20background%20removed.png"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","name":"My Mynah","url":"https://mymynah.com","description":"Your AI speech coach. Master public speaking with real-time feedback.","publisher":{"@type":"Organization","name":"My Mynah","url":"https://mymynah.com"}}
+  </script>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"MobileApplication","name":"My Mynah","applicationCategory":"HealthApplication","operatingSystem":"iOS","description":"AI speech coach with real-time feedback on pace, filler words, and tone. Daily practice, C2 vocabulary, quizzes.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://apps.apple.com/app/my-mynah/id6759068544"}
+  </script>
   <script>
     tailwind.config = {
       theme: {
@@ -39,7 +62,7 @@
 <body class="bg-background-main text-text-primary antialiased selection:bg-primary selection:text-white">
   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
     <!-- Header: no Login, only Get Mynah -->
-    <header class="w-full border-b border-border-color bg-background-main/80 backdrop-blur-md sticky top-0 z-50">
+    <header class="relative w-full border-b border-border-color bg-background-main/80 backdrop-blur-md sticky top-0 z-50">
       <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between py-4">
           <div class="flex items-center gap-3">
@@ -56,11 +79,25 @@
             <a href="https://apps.apple.com/app/my-mynah/id6759068544" target="_blank" rel="noopener" class="hidden sm:flex h-10 px-6 items-center justify-center rounded-full bg-primary hover:bg-primary-dark transition-all text-white text-sm font-bold shadow-lg shadow-primary/20">
               Get Mynah
             </a>
-            <button class="md:hidden p-2 text-text-primary" aria-label="Menu">
-              <span class="material-symbols-outlined">menu</span>
+            <button id="menu-btn" type="button" class="md:hidden p-2 -mr-2 text-text-primary hover:text-primary transition-colors rounded-lg hover:bg-surface-card" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+              <span class="material-symbols-outlined menu-icon-open" aria-hidden="true">menu</span>
+              <span class="material-symbols-outlined menu-icon-close hidden" aria-hidden="true">close</span>
             </button>
           </div>
         </div>
+      </div>
+      <!-- Mobile menu (hidden by default, toggled by JS) -->
+      <div id="mobile-menu" aria-hidden="true" class="md:hidden hidden absolute top-full left-0 right-0 bg-background-main border-b border-border-color shadow-xl z-40">
+        <nav class="flex flex-col py-4 px-4 gap-1">
+          <a class="mobile-nav-link rounded-xl px-4 py-3 text-text-primary hover:bg-surface-card hover:text-primary font-medium transition-colors" href="#features">Features</a>
+          <a class="mobile-nav-link rounded-xl px-4 py-3 text-text-primary hover:bg-surface-card hover:text-primary font-medium transition-colors" href="#how-it-works">About</a>
+          <a class="mobile-nav-link rounded-xl px-4 py-3 text-text-primary hover:bg-surface-card hover:text-primary font-medium transition-colors" href="#pricing">Pricing</a>
+          <a class="mobile-nav-link rounded-xl px-4 py-3 text-text-primary hover:bg-surface-card hover:text-primary font-medium transition-colors" href="#contact">Contact</a>
+          <a href="https://apps.apple.com/app/my-mynah/id6759068544" target="_blank" rel="noopener" class="mt-2 flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-primary hover:bg-primary-dark text-white text-sm font-bold">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Get Mynah
+          </a>
+        </nav>
       </div>
     </header>
 
@@ -252,8 +289,8 @@
             </div>
           </div>
           <nav class="flex flex-wrap gap-x-8 gap-y-4">
-            <a class="text-emerald-500 hover:text-emerald-400 font-medium transition-colors" href="privacy.html">Privacy Policy</a>
-            <a class="text-emerald-500 hover:text-emerald-400 font-medium transition-colors" href="terms.html">Terms of Service</a>
+            <a class="text-emerald-500 hover:text-emerald-400 font-medium transition-colors" href="privacy/">Privacy Policy</a>
+            <a class="text-emerald-500 hover:text-emerald-400 font-medium transition-colors" href="terms/">Terms of Service</a>
             <a class="text-emerald-500 hover:text-emerald-400 font-medium transition-colors" href="mailto:support@mymynah.com">Contact Support</a>
           </nav>
         </div>
@@ -265,5 +302,42 @@
       </div>
     </footer>
   </div>
+  <script>
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      var openIcon = document.querySelector('.menu-icon-open');
+      var closeIcon = document.querySelector('.menu-icon-close');
+      var links = document.querySelectorAll('.mobile-nav-link');
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        menu.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+        if (openIcon) openIcon.classList.add('hidden');
+        if (closeIcon) closeIcon.classList.remove('hidden');
+      }
+      function closeMenu() {
+        menu.classList.add('hidden');
+        menu.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+        if (openIcon) openIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+      }
+
+      if (btn && menu) {
+        btn.addEventListener('click', function () {
+          if (menu.classList.contains('hidden')) openMenu();
+          else closeMenu();
+        });
+      }
+      links.forEach(function (link) {
+        link.addEventListener('click', function () { closeMenu(); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu && !menu.classList.contains('hidden')) closeMenu();
+      });
+    })();
+  </script>
 </body>
 </html>

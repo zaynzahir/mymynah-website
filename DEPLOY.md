@@ -46,7 +46,7 @@ git branch -M main
 git push -u origin main
 ```
 
-After this, the website files (including `index.html`, `privacy.html`, `terms.html`, and `Icon background removed.png`) will be on GitHub.
+After this, the website files (including `index.html`, `privacy/index.html`, `terms/index.html`, and `Icon background removed.png`) will be on GitHub.
 
 ---
 
